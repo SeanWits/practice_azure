@@ -8,6 +8,7 @@
 <body>
     <h1>Test Azure Function</h1>
     <div id="result"></div>
+    <div id="result2"></div>
 
     <script>
         async function callAzureFunction() {
@@ -15,6 +16,16 @@
                 const response = await fetch(`api/message`);
                 const data = await response.json();
                 document.getElementById('result').innerText = data.text; // Change 'data.body' to 'data.text'
+            } catch (error) {
+                console.error('Error calling Azure Function:', error);
+            }
+        }
+
+        async function callAzureFunction() {
+            try {
+                const response = await fetch(`api/message2`);
+                const data = await response.json();
+                document.getElementById('result2').innerText = data.text; // Change 'data.body' to 'data.text'
             } catch (error) {
                 console.error('Error calling Azure Function:', error);
             }
