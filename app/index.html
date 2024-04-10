@@ -21,7 +21,7 @@
             }
         }
 
-        async function callAzureFunction() {
+        async function callAzureFunction2() {
             try {
                 const response = await fetch(`api/message2`);
                 const data = await response.json();
@@ -34,6 +34,7 @@
         // Call the Azure Function when the page loads
         window.onload = function() {
             callAzureFunction();
+            callAzureFunction2();
         };
     </script>
 </body>
