@@ -12,7 +12,7 @@
     <script>
         async function callAzureFunction() {
             try {
-                const response = await fetch(`http://localhost:4280/api/message`);
+                const response = await fetch(`api/message`);
                 const data = await response.json();
                 document.getElementById('result').innerText = data.text; // Change 'data.body' to 'data.text'
             } catch (error) {
