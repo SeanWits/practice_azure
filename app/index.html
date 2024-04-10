@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Function Test</title>
+</head>
+<body>
+    <h1>Test Azure Function</h1>
+    <div id="result"></div>
+
+    <script>
+        async function callAzureFunction() {
+            try {
+                const response = await fetch('<Azure_Function_URL>');
+                const data = await response.json();
+                document.getElementById('result').innerText = data.body;
+            } catch (error) {
+                console.error('Error calling Azure Function:', error);
+            }
+        }
+
+        // Call the Azure Function when the page loads
+        window.onload = function() {
+            callAzureFunction();
+        };
+    </script>
+</body>
+</html>
